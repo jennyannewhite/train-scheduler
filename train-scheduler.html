@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Union Station Train Schedule</title>
+
+    <!--Import jQuery before materialize.js-->
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+    <!-- Materialize CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css" integrity="sha256-3AnlRNIdX11hf3yyjAb12b2Tac0VmZxGxpVRURyJIAw=" crossorigin="anonymous">
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- Javascript file -->
+    <script type="text/javascript" src="train-scheduler.js"></script>
+
+    <!-- Link to Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <nav class="black" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Chicago Union Station</a>
+        </div>
+    </nav>
+
+    <!-- Page Layout here -->
+    <div class="row blue-grey lighten-4">
+
+        <div class="col s12 m10 l10 push-l1 blue-grey lighten-5" id="chart-area">
+            <!-- Note that "m8 l9" was added -->
+            <!-- Teal page content-->
+            <div class="area" id="schedule-area">
+                <div class="header center">
+                    <h5>Current Train Schedule</h3>
+                </div>
+                <div>
+                    <table class="bordered centered highlight">
+                        <thead>
+                            <tr>
+                                <th data-field="train-name">Train Name</th>
+                                <th data-field="destination">Destination</th>
+                                <th data-field="frequency">Frequency (min)</th>
+                                <th data-field="next-arrival">Next Arrival</th>
+                                <th data-field="minutes-away">Minutes Away</th>
+                            </tr>
+                        </thead>
+                        <tbody id="train-info">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="area" id="form-area">
+                <div class="header center">
+                    <h5>Add Trains</h3>
+                </div>
+                <div>
+                    <form>
+                        <div class="form-group">
+                            <label for="trainName">Train Name</label>
+                            <input type="text" class="form-control" id="train-name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainDestination">Destination</label>
+                            <input type="text" class="form-control" id="train-destination" placeholder="Destination">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainTime">First Train Time (HH:mm - military time)</label>
+                            <input type="text" class="form-control" id="train-time" placeholder="HH:mm">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainFrequency">Frequency (min)</label>
+                            <input type="number" class="form-control" id="train-frequency" placeholder="Minutes">
+                        </div>
+                        <button type="button" class="btn btn-default" id="submit">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="black-text">Chicago Union Station</h5>
+                    <p class="black-text text-lighten-4">225 S Canal St, Chicago, IL 60606</p>
+
+
+                </div>
+                <div class="col l3 s12">
+
+                </div>
+
+                <div class="col l3 s12">
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <a class="black-text text-lighten-3" href="http://materializecss.com"></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
